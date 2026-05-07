@@ -1,4 +1,4 @@
-# [Business Name] — Company Website
+# Harthfield Homes — Company Website
 
 ## Tech Stack
 Next.js · TypeScript · Tailwind CSS · Supabase · Cloudflare R2 · Vercel · Resend
