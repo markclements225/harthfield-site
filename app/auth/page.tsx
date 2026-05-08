@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
@@ -9,10 +9,18 @@ export default function AuthPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    if (!mounted) return;
+
     setLoading(true);
     setError('');
 
@@ -68,7 +76,7 @@ export default function AuthPage() {
           )}
 
           <div className="mt-6">
-            <Button type="submit" fullWidth disabled={loading}>
+            <Button type="submit" fullWidth disabled={loading || !mounted}>
               {loading ? 'Checking...' : 'Continue'}
             </Button>
           </div>
