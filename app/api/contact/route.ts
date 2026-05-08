@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
 
     const { error: dbError } = await supabase
       .from('ContactForm')
-      .insert([contactData]);
+      .insert([{ ...contactData, contactMethodID: 1 }]);
 
     if (dbError) {
       console.error('Database error:', dbError);

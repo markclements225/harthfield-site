@@ -20,12 +20,14 @@ export default async function ProjectsPage() {
 
         {/* Project Gallery */}
         {featuredImages.length > 0 ? (
-          <ProjectGallery
-            images={featuredImages}
-            projectTitle="8238 Alamo Road"
-            projectLocation="Brentwood, TN"
-            projectDescription="A complete transformation of a Brentwood property."
-          />
+          <div id="alamo-road">
+            <ProjectGallery
+              images={featuredImages}
+              projectTitle="Brenthaven / Crocket Hills Neighborhood"
+              projectLocation="Brentwood, TN"
+              projectDescription="A complete transformation of a Brentwood property."
+            />
+          </div>
         ) : (
           <p className="text-charcoal">No project images available.</p>
         )}

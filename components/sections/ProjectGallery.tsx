@@ -13,7 +13,7 @@ type ProjectGalleryProps = {
   projectDescription?: string;
 };
 
-const IMAGES_PER_PAGE = 20;
+const IMAGES_PER_PAGE = 12;
 
 export default function ProjectGallery({
   images,
