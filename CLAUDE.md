@@ -286,6 +286,59 @@ Stored in `.env.local` locally. Mirrored in Vercel dashboard. Never committed to
 - Component filenames: PascalCase (`ContactForm.tsx`)
 - All other files: camelCase (`db.ts`, `email.ts`)
 
+## SEO Best Practices
+
+### Meta Tags (Required for all pages)
+- Every page MUST have unique `title` and `description` metadata
+- Titles: 50-60 characters, include primary keywords
+- Descriptions: 150-160 characters, include relevant keywords naturally
+- Include location keywords: "Brentwood," "Tennessee," "Nashville area"
+- Only mention services actually provided (real estate investments, custom home building, property management)
+- DO NOT mention services not offered (e.g., land development)
+
+### Structured Data (Schema.org)
+- Implemented in `/app/layout.tsx` using JSON-LD format
+- Type: RealEstateAgent
+- Includes: business name, location (Brentwood, TN), phone, email, social media links
+- Update structured data if business info changes (phone, email, address, social media)
+- Test changes at: https://search.google.com/test/rich-results
+
+### Sitemap (`/app/sitemap.ts`)
+- **IMPORTANT:** When adding a new page, update sitemap immediately
+- Add new route with appropriate priority (1.0 = highest, 0.5 = medium, 0.1 = lowest)
+- Set changeFrequency based on update frequency (daily, weekly, monthly, yearly)
+- Current pages: home (priority 1.0), projects (0.8), contact (0.5)
+- After updates, verify at: `https://harthfield.com/sitemap.xml`
+
+### Open Graph Tags (Social Media Sharing)
+- All pages should have Open Graph meta tags for proper social media previews
+- Include: og:title, og:description, og:image, og:url, og:type
+- Use high-quality images (1200x630px recommended)
+- Update these when page content changes significantly
+
+### Image Optimization
+- Always use Next.js `<Image />` component (never raw `<img>`)
+- Include descriptive `alt` text for accessibility and SEO
+- Alt text should describe the image content, not just say "image"
+- Use proper image dimensions and formats
+- Images help with ranking, especially in Google Image search
+
+### Content Guidelines for SEO
+- Write natural, readable content - don't keyword stuff
+- Include location mentions naturally in content
+- Use proper heading hierarchy (h1 → h2 → h3)
+- Keep paragraphs scannable and under 3-4 sentences
+- Link internally between pages when relevant
+
+### SEO Maintenance Checklist
+When making site updates:
+- [ ] Update meta tags if page content changes
+- [ ] Add new pages to sitemap
+- [ ] Include Open Graph tags for new pages
+- [ ] Use descriptive alt text on new images
+- [ ] Verify no broken links
+- [ ] Test structured data after business info changes
+
 ## Deployment
 - GitHub push → Vercel auto-deploys
 - Environment variables set in Vercel dashboard

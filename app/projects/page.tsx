@@ -1,5 +1,27 @@
 import ProjectGallery from '@/components/sections/ProjectGallery';
 import { getFeaturedPropertyImages } from '@/lib/db/properties';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Our Projects | Harthfield Holdings - Brentwood Custom Homes",
+  description: "Browse our portfolio of custom homes and real estate projects in Brentwood, Tennessee. Quality craftsmanship and attention to detail in every property.",
+  openGraph: {
+    title: "Our Projects | Harthfield Holdings - Brentwood Custom Homes",
+    description: "Browse our portfolio of custom homes and real estate projects in Brentwood, Tennessee. Quality craftsmanship and attention to detail in every property.",
+    url: "https://harthfield.com/projects",
+    siteName: "Harthfield Holdings",
+    images: [
+      {
+        url: "https://harthfield.com/images/logos/hartfieldLogoMain.png",
+        width: 1200,
+        height: 630,
+        alt: "Harthfield Holdings Projects",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 export default async function ProjectsPage() {
   // Fetch all featured images from property ID 1
