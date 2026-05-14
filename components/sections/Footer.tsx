@@ -93,12 +93,15 @@ export default function Footer() {
               >
                 <FaFacebook size={32} />
               </a>
-              <button
+              <a
+                href="https://www.instagram.com/harthfieldholdings/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white hover:text-white/70 transition-colors"
                 aria-label="Instagram"
               >
                 <FaInstagram size={32} />
-              </button>
+              </a>
             </div>
           </div>
         </div>
