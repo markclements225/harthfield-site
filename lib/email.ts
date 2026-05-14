@@ -19,7 +19,7 @@ ${message}
   `.trim();
 
   await resend.emails.send({
-    from: 'Harthfield Homes <onboarding@resend.dev>',
+    from: 'Harthfield Holdings <info@harthfield.com>',
     to: 'info@harthfield.com',
     bcc: ['mcleme9@gmail.com', 'adamharthcock@gmail.com', 'jessicaharthcock@gmail.com'],
     subject: `New Contact: ${firstName} ${lastName}`,
